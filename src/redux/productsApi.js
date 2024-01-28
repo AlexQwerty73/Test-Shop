@@ -1,47 +1,41 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const baseUrl = 'http://localhost:3001/';
-
 const typeTag = 'Products';
-const src = 'products';
+const resource = 'products';
 
-export const usersApi = createApi({
-   reducerPath: 'usersApi',
+export const productsApi = createApi({
+   reducerPath: 'productsApi',
    tagTypes: [typeTag],
-   baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
+   baseQuery: fetchBaseQuery({ baseUrl }),
 
-   endpoints: (build) => ({
-
-      getProducts: build.query({
-         query: (id = '') => `${src}${id && `/${id}`}`,
-         providesTags: (result) =>
-            result && Array.isArray(result)
-               ? [
-                  ...result.map(({ id }) => ({ type: typeTag, id })),
-                  { type: typeTag, id: 'LIST' },
-               ]
-               : [{ type: typeTag, id: 'LIST' }],
+   endpoints: (builder) => ({
+      getProducts: builder.query({
+         query: (id = '') => `${resource}${id ? `/${id}` : ''}`,
+         providesTags: (result) => [
+            ...(result || []).map(({ id }) => ({ type: typeTag, id })),
+            { type: typeTag, id: 'LIST' },
+         ],
       }),
 
-      addProducts: build.mutation({
+      addProducts: builder.mutation({
          query: (body) => ({
-            url: src,
+            url: resource,
             method: 'POST',
             body,
          }),
-         invalidatesTags: [{ type: typeTag, id: 'LIST' }]
+         invalidatesTags: [{ type: typeTag, id: 'LIST' }],
       }),
 
-      updateProducts: build.mutation({
+      updateProducts: builder.mutation({
          query: (body) => ({
-            url: `${src}/${body.id}`,
+            url: `${resource}/${body.id}`,
             method: 'PUT',
             body,
          }),
          invalidatesTags: [{ type: typeTag, id: 'LIST' }],
-      })
-
+      }),
    }),
 });
 
-export const { useAddProductsMutation, useGetProductsQuery, useUpdateProductsMutation } = usersApi;
+export const { useAddProductsMutation, useGetProductsQuery, useUpdateProductsMutation } = productsApi;
