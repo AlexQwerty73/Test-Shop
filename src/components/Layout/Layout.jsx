@@ -1,20 +1,17 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import { Header } from '../Header';
 
 export const Layout = () => {
    return (
       <>
-         <header className='header'>
-
-         </header>
+         <Header />
 
          <main header='main'>
             <Outlet />
          </main>
 
-         <footer className='footer'>
-
-         </footer>
+         
       </>
    );
 };
