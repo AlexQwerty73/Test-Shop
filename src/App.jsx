@@ -3,7 +3,7 @@ import { Layout } from './components/';
 
 const App = () => {
   return (
-    <div className="App">
+    <>
 
       <Routes>
         <Route path='/' element={<Layout />}>
@@ -11,7 +11,7 @@ const App = () => {
         </Route>
       </Routes>
 
-    </div>
+    </>
   );
 }
 
