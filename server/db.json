@@ -1,4 +1,34 @@
 {
-   "users": [],
-   "ptoducts": []
+   "users": [
+      {
+         "id": "2343",
+         "email": "alex@gmail.com",
+         "name": "Alex",
+         "phone": "380980000000",
+         "password": "Alex"
+      }
+   ],
+   "ptoducts": [
+      {
+         "id": "1e2d",
+         "userId": "2343",
+         "name": "Product 1",
+         "title": "xerctyub crutyvju btf ukvwvdy wluo",
+         "price": "3000"
+      },
+      {
+         "id": "1e2d",
+         "userId": "2343",
+         "name": "Product 2",
+         "title": "xerctyub 342 btf ukvwvdy wluo",
+         "price": "1000"
+      },
+      {
+         "id": "1e2d",
+         "userId": "2343",
+         "name": "Product 3",
+         "title": "xerctyub 2 btf ukvwvdy wluo",
+         "price": "4000"
+      }
+   ]
 }
