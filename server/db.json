@@ -8,6 +8,7 @@
          "password": "Alex"
       }
    ],
+   
    "products": [
       {
          "id": "1e2d",
@@ -30,5 +31,7 @@
          "title": "xerctyub 2 btf ukvwvdy wluo",
          "price": "4000"
       }
-   ]
+   ],
+
+   "cart": []
 }
