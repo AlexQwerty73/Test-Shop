@@ -1,3 +1,8 @@
 .header{
-   background: #00000098;
+   background: #000000b4;
+}
+.nav{
+   display:  flex;
+   justify-content: space-between;
+   padding: 5px 10px;
 }
