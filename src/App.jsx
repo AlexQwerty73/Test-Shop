@@ -7,7 +7,7 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Layout />}>
-
+          <Route index />
         </Route>
       </Routes>
 

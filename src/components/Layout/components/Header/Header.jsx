@@ -1,5 +1,5 @@
 import React from 'react';
-import { CartLogo,Logo } from '../common';
+import { CartLogo, Logo } from '../../../';
 import s from './header.module.css';
 
 export const Header = () => {
@@ -7,11 +7,11 @@ export const Header = () => {
       <header className={s.header}>
          <div className="container">
 
-         <nav className={s.nav}>
-            <Logo />
+            <nav className={s.nav}>
+               <Logo />
 
-            <CartLogo />
-         </nav>
+               <CartLogo />
+            </nav>
 
          </div>
       </header>
